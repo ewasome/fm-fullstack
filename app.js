@@ -7,4 +7,10 @@ app.get('/', (req, res) => {
 	res.send('Yo');
 });
 
-app.listen(port, () => console.log(`Exaple app listening on port ${port}`)); 
+app.get('/demo', (req, res) => {
+	res.set('X-fm-fs', 'Just random header');
+	res.status(418);
+	res.send('I prefer coffee');
+});
+
+app.listen(port, () => console.log(`Example app listening on port ${port}`)); 
